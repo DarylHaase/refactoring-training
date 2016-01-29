@@ -78,6 +78,10 @@
       <Project>{2d3f5d0e-4a6b-44c0-8f63-8e95243ac028}</Project>
       <Name>Refactoring</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Types\Types.csproj">
+      <Project>{28a99853-02e9-4095-b59d-f9fd821290b9}</Project>
+      <Name>Types</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config">

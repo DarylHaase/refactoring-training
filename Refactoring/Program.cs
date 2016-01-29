@@ -1,9 +1,6 @@
-﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
+using Serialization;
+using Types;
 
 namespace Refactoring
 {
@@ -11,11 +8,11 @@ namespace Refactoring
     {
         public static void Main(string[] args)
         {
-            // Load users from data file
-            List<User> users = JsonConvert.DeserializeObject<List<User>>(File.ReadAllText(@"Data\Users.json"));
-
-            // Load products from data file
-            List<Product> products = JsonConvert.DeserializeObject<List<Product>>(File.ReadAllText(@"Data\Products.json"));
+            List<User> users = new List<User>();
+            Deserializer.Deserialize(ref users);
+            
+            List<Product> products = new List<Product>();
+            Deserializer.Deserialize(ref products);
 
             Tusc.Start(users, products);
         }

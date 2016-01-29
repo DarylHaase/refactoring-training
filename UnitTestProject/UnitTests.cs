@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.Serialization.Formatters.Binary;
+using Types;
 
 namespace UnitTestProject
 {
@@ -151,7 +152,7 @@ namespace UnitTestProject
         {
             // Update data file
             List<User> tempUsers = DeepCopy<List<User>>(originalUsers);
-            tempUsers.Where(u => u.Name == "Jason").Single().Bal = 0.0;
+            tempUsers.Where(u => u.Name == "Jason").Single().Balance = 0.0;
 
             using (var writer = new StringWriter())
             {
